@@ -1,26 +1,28 @@
 let sayi = Math.round(Math.random() * 100);
-let tahmin = +prompt("enter a number");
 let hak = 5;
+let tahmin = +prompt("enter a number");
+
 while (hak > 0) {
   if (tahmin == sayi) {
-    console.log(`tebrikler bildiniz`);
+    alert("congratulation!!");
     break;
   } else if (tahmin < sayi) {
-    console.log(`up to the number`);
-    tahmin = +prompt("enter a number");
     hak--;
+    alert("up to the number");
+    tahmin = +prompt("enter a number");
   } else if (tahmin > sayi) {
-    console.log(`down to the number`);
-    tahmin = +prompt("enter a number");
     hak--;
-  }
-  if (hak == 0) {
-    console.log(`you are lost`);
-    let request = prompt("do you want to play again");
-  }
-  if (request == "yes") {
+    alert("down to the number");
     tahmin = +prompt("enter a number");
+  }
+}
+if (hak == 0) {
+  alert("you are lost");
+  let request = prompt("do you want to play again");
+
+  if (request == "yes") {
+    hak = 5;
   } else {
-    console.log(`game over`);
+    alert("game over");
   }
 }
